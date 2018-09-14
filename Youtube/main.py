@@ -34,8 +34,8 @@ def youtube_search(options):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--q', help='Search term', default='Flutter')
-    parser.add_argument('--max-results', help='Max results', default=35)
+    parser.add_argument('--q', help='Search term', default='Replace with your search item')
+    parser.add_argument('--max-results', help='Max results', default=number of results)
     args = parser.parse_args()
 
 try:

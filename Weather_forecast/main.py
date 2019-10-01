@@ -5,10 +5,17 @@ import time
 cronjob = True
 
 
+def get_details():
+    city_name = input("Enter city name")
+    country_code = input("Enter country code")
+    return {'city': city_name, 'country_code': country_code}
+
+
 def get_data():
     app_id = 'Replace with yours'
-    city_name = 'Gandhinagar'
-    country_code = 'IND'
+    details = get_details()
+    city_name = details.get('city')
+    country_code = details.get('country_code')
     api_call = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city_name + ',' + country_code + '&appid=' + app_id + '&mode=json&units=metric'
 
     data = requests.post(api_call)
@@ -43,8 +50,4 @@ def get_data():
         get_data()
 
 
-def get_call():
-    print("===========calling")
-
 get_data()
-get_call()
